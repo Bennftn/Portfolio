@@ -77,3 +77,42 @@ body {
   padding: 1rem;
   border-radius: 8px;
 }
+
+/* Section compétences */
+.skills { padding: 3rem 0; }
+.skills h2 { margin: 0 0 1rem 0; }
+
+/* Un conteneur un peu plus étroit si tu veux */
+.skills .container { max-width: 900px; }
+
+.skill { margin: 12px 0 18px; }
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.skill-track {
+  height: 12px;
+  background: var(--tan);
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.08);
+}
+
+.skill-fill {
+  height: 100%;
+  width: 0;
+  background: var(--moss);
+  border-radius: inherit;
+  transition: width 900ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-fill { transition: none; }
+}
+
+/* Optionnel : marge d’ancre pour le header sticky */
+section { scroll-margin-top: 90px; }

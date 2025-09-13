@@ -1,4 +1,6 @@
 import "./app.css";
+import SkillBar from "./components/SkillBar";
+import { skills } from "./data/skills.js";
 
 export default function App() {
   return (
@@ -21,6 +23,15 @@ export default function App() {
             <h1>Développeur Web Front-End</h1>
             <p>Je conçois des sites modernes, performants et responsives.</p>
             <a className="btn" href="#projets">Voir mes projets</a>
+          </div>
+        </section>
+
+        <section id="compretences" className="skills">
+          <div className="container">
+            <h2>Compétences</h2>
+            {skills.map((s) => (
+              <SkillBar key={s.label} {...s} />
+            ))}
           </div>
         </section>
 
