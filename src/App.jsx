@@ -1,18 +1,22 @@
 import "./app.css";
 import SkillBar from "./components/SkillBar";
 import { skills } from "./data/skills.js";
+import ThemeToggle from "./components/ThemeToggle.jsx";
 
 export default function App() {
   return (
     <>
+    <div className="bg-ornaments" aria-hidden="true" />
       <header className="site-header">
         <div className="container">
           <div className="logo">Benjamin Fontaine</div>
           <nav>
             <a href="#accueil">Accueil</a>
+            <a href="#competences">Compétences</a>
             <a href="#projets">Projets</a>
             <a href="#apropos">À propos</a>
             <a href="#contact">Contact</a>
+            <ThemeToggle />
           </nav>
         </div>
       </header>
@@ -26,7 +30,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="compretences" className="skills">
+        <section id="competences" className="skills">
           <div className="container">
             <h2>Compétences</h2>
             {skills.map((s) => (
