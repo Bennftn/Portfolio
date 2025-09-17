@@ -28,7 +28,7 @@ export default function Contact() {
           <button className="btn" type="submit">Envoyer</button>
         </form>
         <p style={{opacity:.7, fontSize:".9rem"}}>
-          (Astuce rapide : tu peux aussi cliquer sur l’email ci-dessus pour ouvrir ton client mail.)
+          (Astuce rapide : tu peux aussi cliquer sur l’email ci-dessus pour ouvrir ton application mail.)
         </p>
       </div>
     </section>

@@ -1,7 +1,9 @@
 import SkillBar from "../components/SkillBar";
+import ProjectCard from "../components/ProjectCard.jsx";
 import { skills } from "../data/skills.js";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { projects } from "../data/projects.js";
 
 export default function Home() {
   // Gérer le scroll vers #hash quand on vient d'une autre page
@@ -50,14 +52,12 @@ export default function Home() {
 </section>
 
 
-      <section id="projets" className="projets">
+      <section id="projets" className="projets section">
         <div className="container">
           <h2>Mes Projets</h2>
-          <div className="grid">
-            <article className="card">Booki</article>
-            <article className="card">Sophie Bluel</article>
-            <article className="card">Kasa</article>
-          </div>
+        <div className="grid">
+        {projects.map(p => <ProjectCard key={p.title} {...p} />)}
+        </div>
         </div>
       </section>
 
