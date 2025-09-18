@@ -6,6 +6,13 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { projects } from "../data/projects.js";
 import { journey } from "../data/journey.js";
+import { Helmet } from "@dr.pogodin/react-helmet";
+
+<Helmet>
+  <title>Portfolio — Benjamin Fontaine</title>
+  <meta name="description" content="Intégrations front modernes, React, accessibilité." />
+  <link rel="canonical" href="" />  {/*a remplir apres */}
+</Helmet>
 
 export default function Home() {
   const { hash } = useLocation();

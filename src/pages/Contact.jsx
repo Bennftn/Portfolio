@@ -1,3 +1,12 @@
+import { Helmet } from "@dr.pogodin/react-helmet";
+
+<Helmet>
+  <title>Portfolio — Benjamin Fontaine</title>
+  <meta name="description" content="Intégrations front modernes, React, accessibilité." />
+  <link rel="canonical" href="" /> {/*a remplir apres */}
+</Helmet>
+
+
 export default function Contact() {
   return (
     <section className="section contact">
