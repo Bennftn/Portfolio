@@ -2,8 +2,9 @@ export const projects = [
   {
     title: "Booki",
     description: "Intégration pixel-perfect d’une page d’hébergements, responsive.",
-    image: "/assets/booki.jpg",
+    image: "/assets/Booki.png",
     skills: ["HTML sémantique", "CSS Grid/Flex", "Responsive", "A11y de base"],
+    tech: ["HTML", "CSS"],
     challenges: [
       {
         problem: "Respect strict de la maquette sur tous les breakpoints.",
@@ -22,6 +23,7 @@ export const projects = [
     description: "Galerie filtrable avec interface d’admin (vanilla JS).",
     image: "/assets/sophie.jpg",
     skills: ["JavaScript", "Fetch API", "Modales", "Gestion d’état côté front"],
+    tech: ["HTML", "CSS", "JavaScript"],
     challenges: [
       {
         problem: "Gestion des états (login, ajout/suppression d’éléments).",
@@ -40,6 +42,7 @@ export const projects = [
     description: "Application de location en React avec routing, composants réutilisables et gestion des états.",
     image: "/assets/kasa.jpg",
     skills: ["React", "React Router", "Props/State", "Composants réutilisables", "A11y"],
+    tech: ["HTML", "CSS", "JavaScript", "React"],
     challenges: [
       {
         problem: "Structurer l’app en composants clairs tout en respectant la maquette.",

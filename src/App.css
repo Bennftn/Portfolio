@@ -512,3 +512,41 @@ a:hover{
   background: var(--accent);
   color: var(--btn-fg);
 }
+
+.pc-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:12px;
+  flex-wrap:wrap;
+}
+.pc-actions{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tech-icons{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom: 10px;
+}
+.tech-icon{
+  font-size:20px;
+  line-height:1;
+  filter: grayscale(100%) opacity(.8);
+  transition: filter .2s, transform .2s;
+}
+.project-card:hover .tech-icon{
+  filter:none;
+  opacity:1;
+  transform: translateY(-1px);
+}
+
+@media (max-width:520px){
+  .tech-icon{
+    font-size:18px;
+  }
+}
