@@ -550,3 +550,115 @@ a:hover{
     font-size:18px;
   }
 }
+
+.timeline{
+  list-style: none;
+  position: relative;
+  margin: 1.25rem 0 0;
+  padding-left: 64px;
+}
+.timeline::before{
+  content:"";
+  position: absolute;
+  left: 22px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.tl-item{
+  position: relative;
+  margin-bottom: 16px;
+  margin: 18px 0;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.tl-item.is-in{
+  opacity: 1;
+  transform: none;
+}
+
+.tl-marker{
+  position: absolute;
+  left: -28px;
+  top: .9rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid color-mix(in oklab, var(--accent) 50%, #0000);
+  box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent) 18%, transparent);
+}
+
+.tl-content.card{
+  padding: 12px 14px;
+}
+.tl-header{
+  color: var(--muted);
+  font-size: .92rem;
+}
+.tl-title{
+  margin: .2rem 0 .25rem;
+  font-size: 1.05rem;
+}
+.tl-desc{
+  margin: 0;
+  color: var(--muted);
+}
+.tl-tags{
+  display:flex;
+  gap:8px;
+  margin:.6rem 0 0;
+  padding:0;
+  list-style:none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .tl-item{
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
+  transition-delay: var(--d, 0ms);   /* permet un léger décalage entre cartes */
+  will-change: opacity, transform;
+}
+.reveal.is-in{
+  opacity: 1;
+  transform: none;
+}
+
+/* accessibilité : pas d’anim si PRM */
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}
+
+.reveal{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-in{
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+}

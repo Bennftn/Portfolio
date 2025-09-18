@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 const iconClassFor = (name = "") => {
   const n = name.toLowerCase();
   if (["html","html5"].includes(n)) return "devicon-html5-plain";
@@ -14,10 +16,47 @@ const iconClassFor = (name = "") => {
 
 export default function ProjectCard({
   title, description, image, alt = `Aperçu ${title}`,
-  skills = [], challenges = [], demo, code, tech = []
+  skills = [], challenges = [], demo, code, tech = [], delay = 0
 }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+  const el = ref.current;
+  if (!el) return;
+
+  // Si l’utilisateur préfère réduire les animations → visible en permanence
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    el.classList.add("is-in");
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          el.classList.add("is-in");
+        } else {
+          el.classList.remove("is-in");
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px" // retire un peu la zone en bas pour un ressenti propre
+    }
+  );
+
+  io.observe(el);
+  return () => io.disconnect();
+  }, []);
+
+
   return (
-    <article className="project-card">
+    <article
+      ref={ref}
+      className="project-card reveal"
+      style={{ "--d": `${delay}ms` }}
+    >
       {image && (
         <div className="pc-media">
           <img src={image} alt={alt} loading="lazy" />
@@ -52,17 +91,14 @@ export default function ProjectCard({
         )}
 
         {tech.length > 0 && (
-          <div
-            className="tech-icons"
-            aria-label={`Technologies utilisées : ${tech.join(", ")}`}
-          >
-            {tech.map((tech) => {
-              const cls = iconClassFor(tech);
+          <div className="tech-icons" aria-label={`Technologies utilisées : ${tech.join(", ")}`}>
+            {tech.map((t) => {
+              const cls = iconClassFor(t);
               return (
                 <i
-                  key={`${title}-${tech}`}
+                  key={`${title}-${t}`}
                   className={`tech-icon ${cls} colored`}
-                  title={tech}
+                  title={t}
                   aria-hidden="true"
                 />
               );

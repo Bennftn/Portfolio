@@ -1,12 +1,13 @@
 import SkillBar from "../components/SkillBar";
 import ProjectCard from "../components/ProjectCard.jsx";
+import Timeline from "../components/Timeline.jsx";
 import { skills } from "../data/skills.js";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { projects } from "../data/projects.js";
+import { journey } from "../data/journey.js";
 
 export default function Home() {
-  // Gérer le scroll vers #hash quand on vient d'une autre page
   const { hash } = useLocation();
   useEffect(() => {
     if (hash) {
@@ -42,38 +43,35 @@ export default function Home() {
       <a className="btn" href="/contact">Travailler ensemble</a>
     </div>
 
-    {/* Colonne droite : barres */}
-    <div className="skills-bars">
-      {skills.map((s) => (
+      {/* Colonne droite : barres */}
+      <div className="skills-bars">
+        {skills.map((s) => (
         <SkillBar key={s.label} {...s} />
       ))}
-    </div>
-  </div>
-</section>
+      </div>
+      </div>
+    </section>
 
 
       <section id="projets" className="projets section">
         <div className="container">
           <h2>Mes Projets</h2>
-        <div className="grid">
-        {projects.map(p => <ProjectCard key={p.title} {...p} />)}
-        </div>
+          <div className="grid">
+            {projects.map((p, i) => (
+              <ProjectCard key={p.title} {...p} delay={i * 80} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="apropos" className="about">
+      <section id="apropos" className="about section">
         <div className="container">
           <h2>À propos</h2>
           <p>
             Je suis Benjamin Fontaine, développeur web en formation, passionné par la
             création d'interfaces modernes et accessibles.
           </p>
-          <ul>
-            <li>HTML / CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Git / GitHub</li>
-          </ul>
+          <Timeline items={journey} order="desc" />  {/* récent -> ancien */}
         </div>
       </section>
     </>

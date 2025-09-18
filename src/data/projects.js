@@ -15,7 +15,7 @@ export const projects = [
         solution: "Balises sémantiques, alt pertinents, couleurs vérifiées (AA)."
       }
     ],
-    demo: "https://…/booki",   // <- remplace par ton lien
+    demo: "https://…/booki",
     code: "https://github.com/Bennftn/Booki"
   },
   {
@@ -34,8 +34,8 @@ export const projects = [
         solution: "Validation (type/taille), messages d’erreur, appels API try/catch."
       }
     ],
-    demo: "https://…/sophie",  // <- remplace
-    code: "https://github.com/Bennftn/Sophie-Bluel"
+    demo: "https://…/sophie",
+    code: "https://github.com/Bennftn/Portfolio-architecte-sophie-bluel.git"
   },
   {
     title: "Kasa",
@@ -57,8 +57,7 @@ export const projects = [
         solution: "État local minimal, clés stables, et dérivation de données au rendu plutôt que les stocker."
       }
     ],
-    demo: "https://ton-domaine.vercel.app",          // remplace par ton lien de démo
-    code: "https://github.com/Bennftn/Kasa"          // remplace par ton repo
+    demo: "https://ton-domaine.vercel.app",          // a remplace par le lien de démo
+    code: "https://github.com/Bennftn/Kasa"          // a remplacer par le repo
   }
-  // Tu peux ajouter Kasa, Nina Carducci, etc.
 ];
