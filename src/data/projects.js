@@ -21,7 +21,7 @@ export const projects = [
   {
     title: "Sophie Bluel",
     description: "Galerie filtrable avec interface d’admin (vanilla JS).",
-    image: "/assets/sophie.jpg",
+    image: "/assets/Sophie-Bluel.png",
     skills: ["JavaScript", "Fetch API", "Modales", "Gestion d’état côté front"],
     tech: ["HTML", "CSS", "JavaScript"],
     challenges: [
@@ -40,7 +40,7 @@ export const projects = [
   {
     title: "Kasa",
     description: "Application de location en React avec routing, composants réutilisables et gestion des états.",
-    image: "/assets/kasa.jpg",
+    image: "/assets/Kasa.png",
     skills: ["React", "React Router", "Props/State", "Composants réutilisables", "A11y"],
     tech: ["HTML", "CSS", "JavaScript", "React"],
     challenges: [
