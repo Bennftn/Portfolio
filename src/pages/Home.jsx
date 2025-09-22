@@ -8,6 +8,7 @@ import { projects } from "../data/projects.js";
 import { journey } from "../data/journey.js";
 import { Helmet } from "@dr.pogodin/react-helmet";
 
+
 <Helmet>
   <title>Portfolio — Benjamin Fontaine</title>
   <meta name="description" content="Intégrations front modernes, React, accessibilité." />
