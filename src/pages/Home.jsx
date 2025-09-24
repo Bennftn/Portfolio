@@ -9,11 +9,7 @@ import { journey } from "../data/journey.js";
 import { Helmet } from "@dr.pogodin/react-helmet";
 
 
-<Helmet>
-  <title>Portfolio — Benjamin Fontaine</title>
-  <meta name="description" content="Intégrations front modernes, React, accessibilité." />
-  <link rel="canonical" href="" />  {/*a remplir apres */}
-</Helmet>
+
 
 export default function Home() {
   const { hash } = useLocation();
@@ -24,8 +20,22 @@ export default function Home() {
     }
   }, [hash]);
 
+  //domaine a remplir plus tard
+  // const canonical = "NOM-DE-DOMAINE";
+
   return (
     <>
+      {/*<Helmet
+      title="Portfolio - Benjamin Fontaine"
+      meta={[
+        {
+          name: "Description",
+          content: "Intégrations front modernes, React, accesibilité.",
+        },
+      ]}
+      link={[{ rel: "canonical", href: canonical }]}
+      />*/}{/*a remplir apres */}
+
       <section id="accueil" className="hero">
         <div className="container">
           <h1>Développeur Web Front-End</h1>
@@ -59,6 +69,99 @@ export default function Home() {
       </div>
       </div>
     </section>
+
+    <section id="presentation" className="intro section">
+  <div className="container">
+    <h2>Présentation</h2>
+
+    {/* 1) Accroche courte visible */}
+    <p className="lead">
+      Bonjour, je suis <strong>Benjamin Fontaine</strong>, développeur
+      <strong> Front-End (React)</strong> freelance. J’aide indépendants et TPE à livrer des interfaces
+      <strong> rapides</strong>, <strong>accessibles</strong> et faciles à maintenir.
+    </p>
+
+    {/* 2) Le pitch en 6 actes replié */}
+<details className="readmore">
+  <summary>En apprendre davantage</summary>
+  <div className="prose">
+    <h3>1. Accroche identitaire</h3>
+    <p>
+      Je m’appelle <strong>Benjamin Fontaine</strong>, développeur <strong>Front-End</strong> freelance
+      spécialisé <strong>React</strong>. J’aide indépendants et TPE à transformer des maquettes en
+      interfaces <strong>rapides</strong>, <strong>accessibles</strong> et <strong>évolutives</strong>, sans
+      sacrifier la qualité du code.
+    </p>
+    <p>
+      Mon terrain de jeu : des UI claires, performantes et maintenables, construites avec des
+      composants propres et une base technique solide.
+    </p>
+
+    <h3>2. Parcours et légitimité</h3>
+    <p>
+      Issu d’une reconversion structurée via la formation <strong>OpenClassrooms (Développeur Web)</strong>,
+      j’ai consolidé mes compétences par des projets concrets. Venir d’un univers orienté
+      utilisateur m’a appris à écouter les besoins, cadrer un périmètre et livrer de façon itérative.
+    </p>
+    <p>
+      Ce qui m’a fait rester ? La satisfaction de résoudre des problèmes réels par le code et
+      d’offrir une expérience fluide aux utilisatrices et utilisateurs.
+    </p>
+
+    <h3>3. Stack technique et expertise</h3>
+    <p>
+      Au quotidien : <strong>HTML sémantique</strong>, <strong>CSS moderne</strong> (Flexbox, Grid, variables),
+      <strong>JavaScript</strong> et <strong>React</strong> (hooks, composition, <strong>React Router</strong>).
+      Je travaille avec <strong>Git/GitHub</strong>, une attention forte à
+      l’<strong>accessibilité</strong> (landmarks, navigation clavier, contrastes) et à la
+      <strong>performance</strong> (images responsives, lazy-loading, budgets, audits Lighthouse).
+      J’intègre aussi un <strong>SEO de base</strong> efficace (balises, métadonnées, structure du contenu).
+    </p>
+
+    <h3>4. Projets marquants et impact</h3>
+    <ul>
+      <li>
+        <strong>Booki</strong> — Intégration <em>pixel-perfect</em> et entièrement responsive, respect strict
+        des contrastes AA et de la maquette sur plusieurs breakpoints.
+      </li>
+      <li>
+        <strong>Sophie Bluel</strong> — Galerie filtrable avec interface d’admin en JavaScript Vanilla :
+        appels API, gestion d’état côté front, modales, validations et messages d’erreur clairs.
+      </li>
+      <li>
+        <strong>Kasa</strong> — Application React avec <strong>routing dynamique</strong>, composants
+        réutilisables (accordéon, tags, rating) et gestion robuste des 404 pour une base de code
+        propre et évolutive.
+      </li>
+    </ul>
+
+    <h3>5. Approche et différenciation</h3>
+    <p>
+      Je privilégie des cycles courts, des démos régulières et une communication simple.
+      Mon approche <strong>accessibility-first</strong> garantit que le design et le code servent
+      toutes et tous : focus visibles, interactions prévisibles, lecture confortable.
+    </p>
+    <p>
+      Côté technique, j’opte pour des composants réutilisables, une dette minimale et des décisions
+      documentées pour faciliter la reprise. Objectif : livrer vite, bien et de manière mesurable.
+    </p>
+
+    <h3>6. Projection et ambitions</h3>
+    <p>
+      Je recherche des missions freelance : sites vitrines/portfolios, intégrations
+      <strong> Figma → React</strong>, refontes orientées <strong>performance</strong> et <strong>SEO</strong>.
+      J’ai envie de pousser des <strong>design systems</strong> légers, mener des audits
+      <strong> A11y/Perf</strong> et accompagner mes clients sur des bonnes pratiques durables.
+    </p>
+    <p style={{ textAlign: "center", marginTop: 12 }}>
+      <a className="btn" href="/contact">Me contacter</a>
+    </p>
+  </div>
+</details>
+
+  </div>
+</section>
+
 
 
       <section id="projets" className="projets section">
