@@ -1,15 +1,18 @@
 import { Helmet } from "@dr.pogodin/react-helmet";
 
-<Helmet>
-  <html lang="fr" />
-  <title>Contact — Benjamin Fontaine</title>
-  <meta name="description" content="Discutons de votre projet front (React), intégration et refonte." />
-  <link rel="canonical" href={`${SITE_URL}/contact`} />
-</Helmet>
+const SITE_URL = "https://benjaminfontaine.com";
 
 
 export default function Contact() {
   return (
+    <>
+    <Helmet>
+      <html lang="fr" />
+      <title>Contact — Benjamin Fontaine</title>
+      <meta name="description" content="Discutons de votre projet front (React), intégration et refonte." />
+      <link rel="canonical" href={`${SITE_URL}/contact`} />
+    </Helmet>
+
     <section className="section contact">
       <div className="container" style={{maxWidth: "800px"}}>
         <h1>Contact</h1>
@@ -17,7 +20,7 @@ export default function Contact() {
 
         <div style={{margin:"16px 0"}}>
           <p>
-            📧 <a href="mailto:mail@test.com">mail@test.com</a><br/>
+            📧 <a href="mailto:contact@benjaminfontaine.com">contact@benjaminfontaine.com</a><br/>
             🔗 <a href="https://github.com/Bennftn" target="_blank" rel="noreferrer">GitHub</a>
           </p>
         </div>
@@ -42,5 +45,6 @@ export default function Contact() {
         </p>
       </div>
     </section>
+    </>
   );
 }
