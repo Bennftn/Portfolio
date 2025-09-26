@@ -37,7 +37,7 @@ export default function App() {
           <NavLink to="/contact" className="desktop-only">Contact</NavLink>
 
         {/* Bouton mobile : Contact ou Accueil selon la page courante */}
-        {location.pathname === "/contact" ? (
+        {loc.pathname === "/contact" ? (
         <NavLink to="/" className="nav-contact btn mobile-only">Accueil
         </NavLink> ) : (
         <NavLink to="/contact" className="nav-contact btn mobile-only">Contact
