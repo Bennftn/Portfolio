@@ -1,9 +1,10 @@
 import { Helmet } from "@dr.pogodin/react-helmet";
 
 <Helmet>
-  <title>Portfolio — Benjamin Fontaine</title>
-  <meta name="description" content="Intégrations front modernes, React, accessibilité." />
-  <link rel="canonical" href="" /> {/*a remplir apres */}
+  <html lang="fr" />
+  <title>Contact — Benjamin Fontaine</title>
+  <meta name="description" content="Discutons de votre projet front (React), intégration et refonte." />
+  <link rel="canonical" href={`${SITE_URL}/contact`} />
 </Helmet>
 
 

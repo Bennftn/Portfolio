@@ -27,10 +27,11 @@ export default function Home() {
     <>
       <Helmet>
         {/* Titre et description */}
+        <html lang="fr" />
         <title>Benjamin Fontaine - Développeur web Front-end</title>
         <meta
           name="description"
-          content="Je suis Benjamin Fontaine, développeur web Front-end. Je crée des sites modernes, performants et accessibles avec React."
+          content="Je crée des sites modernes, performants et accessibles avec React."
         />
         <link rel="canonical" href={SITE_URL} />
 
