@@ -1,4 +1,4 @@
-import "./app.css";
+import "./App.css";
 import { Routes, Route, NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import ThemeToggle from "./components/ThemeToggle.jsx";
