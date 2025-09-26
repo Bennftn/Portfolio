@@ -778,3 +778,32 @@ a:hover{
   overflow: auto;
 }
 
+.readmore-toggle{
+  margin-top: 12px;
+}
+
+.readmore-panel{
+  margin-top: 12px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .4s ease, opacity .3s ease;
+}
+
+.readmore-panel.is-open{
+  max-height: 1600px;   /* assez grand pour contenir le texte */
+  opacity: 1;
+}
+
+.prose h3{
+  margin: .6rem 0 .35rem;
+}
+
+.prose p{
+  margin: 0 0 .7rem;
+  color: var(--muted);
+}
+
+.prose ul{
+  margin: .4rem 0 .8rem 1.2rem;
+}
