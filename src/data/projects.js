@@ -15,7 +15,7 @@ export const projects = [
         solution: "Balises sémantiques, alt pertinents, couleurs vérifiées (AA)."
       }
     ],
-    demo: "https://…/booki",
+    demo: "https://bennftn.github.io/Booki/",
     code: "https://github.com/Bennftn/Booki"
   },
   {

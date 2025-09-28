@@ -107,11 +107,6 @@ export default function ProjectCard({
         )}
 
         <div className="pc-actions">
-          {demo && (
-            <a className="btn" href={demo} target="_blank" rel="noopener noreferrer">
-              Voir en ligne
-            </a>
-          )}
           {code && (
             <a className="btn btn-outline" href={code} target="_blank" rel="noopener noreferrer">
               Code GitHub
