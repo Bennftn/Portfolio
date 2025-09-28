@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Booki",
     description: "Intégration pixel-perfect d’une page d’hébergements, responsive.",
-    image: "/assets/Booki.png",
+    image: "/assets/Booki.webp",
     skills: ["HTML sémantique", "CSS Grid/Flex", "Responsive", "A11y de base"],
     tech: ["HTML", "CSS"],
     challenges: [
@@ -21,7 +21,7 @@ export const projects = [
   {
     title: "Sophie Bluel",
     description: "Galerie filtrable avec interface d’admin (vanilla JS).",
-    image: "/assets/Sophie-Bluel.png",
+    image: "/assets/Sophie-Bluel.webp",
     skills: ["JavaScript", "Fetch API", "Modales", "Gestion d’état côté front"],
     tech: ["HTML", "CSS", "JavaScript"],
     challenges: [
@@ -40,7 +40,7 @@ export const projects = [
   {
     title: "Kasa",
     description: "Application de location en React avec routing, composants réutilisables et gestion des états.",
-    image: "/assets/Kasa.png",
+    image: "/assets/Kasa.webp",
     skills: ["React", "React Router", "Props/State", "Composants réutilisables", "A11y"],
     tech: ["HTML", "CSS", "JavaScript", "React"],
     challenges: [
