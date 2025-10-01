@@ -291,8 +291,8 @@ a:hover{
 }
 
 @media (prefers-reduced-motion: reduce){
-  .skill-fill{ 
-    transition:none; 
+  .skill-fill{
+    transition:none;
   }
 }
 
@@ -671,7 +671,6 @@ a:hover{
   transform: none;
 }
 
-/* accessibilité : pas d’anim si PRM */
 @media (prefers-reduced-motion: reduce){
   .reveal{
     opacity:1;
@@ -791,7 +790,7 @@ a:hover{
 }
 
 .readmore-panel.is-open{
-  max-height: 1600px;   /* assez grand pour contenir le texte */
+  max-height: 1600px;
   opacity: 1;
 }
 
@@ -807,3 +806,129 @@ a:hover{
 .prose ul{
   margin: .4rem 0 .8rem 1.2rem;
 }
+
+.contact .container {
+  max-width: 800px;
+}
+
+.contact-lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--muted);
+}
+
+.contact-info-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+}
+
+.contact-info-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info-box p {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.contact-info-box p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info-box strong {
+  font-weight: 600;
+}
+
+.contact-info-box a {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.contact-info-box a:hover {
+  color: var(--accent-2);
+}
+
+.contact-section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-intro-text {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+}
+
+.contact-why-box {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.contact-why-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-why-box ul {
+  padding-left: 1.5rem;
+  line-height: 1.8;
+  list-style-type: disc;
+  margin: 0;
+}
+
+.contact-why-box li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-tip {
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+select.input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23889063' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+:root[data-theme="light"] select.input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236D28D9' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+}
+
+select.input {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+select.input option[value=""] {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+select.input option {
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px;
+  font-weight: 400;
+}
+
+select.input option:checked {
+  background: var(--accent);
+  color: var(--btn-fg);
+  font-weight: 600;
+}
+

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://benjaminfontaine.com/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /

@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import ThemeToggle from "./components/ThemeToggle.jsx";
 import Home from "./pages/Home.jsx";
 import Contact from "./pages/Contact.jsx";
+import Merci from "./pages/Merci.jsx";
 
 export default function App() {
   const loc = useLocation();
@@ -53,6 +54,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/merci" element={<Merci />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
