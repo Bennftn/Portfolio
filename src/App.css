@@ -932,3 +932,85 @@ select.input option:checked {
   font-weight: 600;
 }
 
+/* =========
+   Page Merci - Styles
+   ========= */
+
+.merci-container {
+  max-width: 700px;
+  text-align: center;
+}
+
+.merci-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+}
+
+.merci-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0);
+}
+
+.merci-card h1 {
+  margin-bottom: 1rem;
+}
+
+.merci-lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.merci-steps-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.merci-steps-box h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.merci-steps-box ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: var(--muted);
+  line-height: 1.8;
+  list-style-type: disc;
+}
+
+.merci-steps-box li {
+  margin-bottom: 0.25rem;
+}
+
+.merci-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.merci-footer-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.merci-footer-text a {
+  color: var(--accent);
+}
+
+.merci-footer-text a:hover {
+  color: var(--accent-2);
+}
