@@ -133,10 +133,11 @@ export default function Contact() {
 
           <form
             className="form"
-            action="https://formspree.io/f/xwprbenk"
+            action="https://api.web3forms.com/submit"
             method="POST"
           >
-            <input type="hidden" name="_next" value="https://benjaminfontaine.com/merci" />
+            <input type="hidden" name="access_key" value="8a20ae48-ed6f-4e9e-b175-64477426733b" />
+            <input type="hidden" name="redirect" value="https://benjaminfontaine.com/merci" />
             <label>
               Nom ou entreprise
               <input
