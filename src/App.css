@@ -790,7 +790,7 @@ a:hover{
 }
 
 .readmore-panel.is-open{
-  max-height: 1600px;
+  max-height: 5000px;
   opacity: 1;
 }
 
