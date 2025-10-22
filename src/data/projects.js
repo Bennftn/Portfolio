@@ -34,12 +34,11 @@ export const projects = [
         solution: "Validation (type/taille), messages d’erreur, appels API try/catch."
       }
     ],
-    demo: "https://…/sophie",
     code: "https://github.com/Bennftn/Portfolio-architecte-sophie-bluel.git"
   },
   {
     title: "Kasa",
-    description: "Application de location en React avec routing, composants réutilisables et gestion des états.",
+    description: "Application de location en React avec routing et composants réutilisables",
     image: "/assets/Kasa.webp",
     skills: ["React", "React Router", "Props/State", "Composants réutilisables", "A11y"],
     tech: ["HTML", "CSS", "JavaScript", "React"],
@@ -57,7 +56,29 @@ export const projects = [
         solution: "État local minimal, clés stables, et dérivation de données au rendu plutôt que les stocker."
       }
     ],
-    demo: "https://ton-domaine.vercel.app",          // a remplace par le lien de démo
+    code: "https://github.com/Bennftn/Kasa"          // a remplacer par le repo
+  },
+  {
+    title: "VD Serrurerie",
+    description: "Site vitrine pour promouvoir ses créations",
+    image: "/assets/vd-serrurerie-site.PNG",
+    skills: ["React", "React Router", "Props/State", "Composants réutilisables", "A11y"],
+    tech: ["HTML", "CSS", "JavaScript", "React"],
+    challenges: [
+      {
+        problem: "Structurer l’app en composants clairs tout en respectant la maquette.",
+        solution: "Découpage par pages/sections, composants UI (Accordion, Tag, Rating) et props typées."
+      },
+      {
+        problem: "Gestion des routes dynamiques (page logement) et des 404.",
+        solution: "Mise en place de React Router (routes dynamiques, fallback 404) + redirections propres."
+      },
+      {
+        problem: "Éviter les re-rendus inutiles et garder une UI fluide.",
+        solution: "État local minimal, clés stables, et dérivation de données au rendu plutôt que les stocker."
+      }
+    ],
+    demo: "https://vdserrurerie.com",          // a remplace par le lien de démo
     code: "https://github.com/Bennftn/Kasa"          // a remplacer par le repo
   }
 ];

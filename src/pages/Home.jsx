@@ -1,6 +1,7 @@
 import SkillBar from "../components/SkillBar";
 import ProjectCard from "../components/ProjectCard.jsx";
 import Timeline from "../components/Timeline.jsx";
+import Services from "../components/Services.jsx";
 import { skills } from "../data/skills.js";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -148,7 +149,7 @@ export default function Home() {
               "areaServed": [
                 {
                   "@type": "City",
-                  "name": "Rebais"
+                  "name": "Bellot"
                 },
                 {
                   "@type": "AdministrativeArea",
@@ -195,7 +196,7 @@ export default function Home() {
           "areaServed": [
             {
               "@type": "City",
-              "name": "Rebais"
+              "name": "Bellot"
             },
             {
               "@type": "City",
@@ -279,7 +280,7 @@ export default function Home() {
         <div className="container">
           <h1>Développeur Web Front-End React Freelance</h1>
           <p className="subtitle">
-            Basé à <strong>Rebais (Seine-et-Marne, 77)</strong>, je conçois des <strong>sites web modernes</strong>,
+            Basé à <strong>Bellot (Seine-et-Marne, 77)</strong>, je conçois des <strong>sites web modernes</strong>,
             performants et accessibles avec React, HTML5 et CSS3.
           </p>
           <p className="skills-summary">
@@ -291,7 +292,7 @@ export default function Home() {
           </a>
         </div>
       </section>
-
+        <Services />
       <section id="competences" className="skills section">
         <div className="container skills-grid">
           {/* Colonne gauche : texte */}
@@ -320,7 +321,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section id="presentation" className="intro section">
         <div className="container">
           <h2>Qui suis-je ?</h2>
@@ -328,7 +328,7 @@ export default function Home() {
           {/* Accroche courte visible avec localisation */}
           <p className="lead">
             Bonjour, je suis <strong>Benjamin Fontaine</strong>, développeur web
-            <strong> front-end React freelance</strong> basé à <strong>Rebais en Seine-et-Marne (77)</strong>.
+            <strong> front-end React freelance</strong> basé à <strong>Bellot en Seine-et-Marne (77)</strong>.
             J'accompagne les indépendants et TPE d'<strong>Île-de-France</strong> dans la création
             d'<strong>interfaces rapides</strong>, <strong>accessibles</strong> et faciles à maintenir.
           </p>

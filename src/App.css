@@ -302,7 +302,7 @@ a:hover{
 .projets .grid,
 .projects .grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: clamp(14px, 2.4vw, 22px);
   align-items: start;
 }
@@ -1013,4 +1013,170 @@ select.input option:checked {
 
 .merci-footer-text a:hover {
   color: var(--accent-2);
+}
+
+
+
+
+.services {
+  padding: 4rem 0;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-header h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.services-subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(16px, 2.5vw, 24px);
+  align-items: stretch;
+}
+
+/* Service Card - reprend le style des .card existantes */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0);
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.service-description {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 0;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.service-features li {
+  padding: 0.5rem 0;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.check-mark {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  gap: 1rem;
+}
+
+.service-price {
+  font-size: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Bouton adapté au style du site */
+.service-card .btn {
+  padding: 0.5rem 1rem;
+  min-height: 40px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .service-card .btn {
+    width: 100%;
+  }
+
+  .service-price {
+    text-align: center;
+  }
+}
+
+/* Animation d'apparition (optionnelle) */
+@media (prefers-reduced-motion: no-preference) {
+  .service-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+  }
+
+  .service-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .service-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .service-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
