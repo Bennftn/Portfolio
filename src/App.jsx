@@ -1,9 +1,12 @@
 import "./App.css";
-import { Routes, Route, NavLink, useLocation } from "react-router-dom";
+import { Routes, Route, NavLink, useLocation, Link } from "react-router-dom";
 import ThemeToggle from "./components/ThemeToggle.jsx";
 import Home from "./pages/Home.jsx";
 import Contact from "./pages/Contact.jsx";
 import Merci from "./pages/Merci.jsx";
+import MentionsLegales from "./pages/MentionsLegales.jsx";
+import Confidentialite from "./pages/Confidentialite.jsx";
+import CGV from "./pages/CGV-site.jsx";
 
 export default function App() {
   const loc = useLocation();
@@ -55,11 +58,25 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/merci" element={<Merci />} />
           <Route path="*" element={<Home />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/confidentialite" element={<Confidentialite />} />
+          <Route path="/cgv" element={<CGV />} />
         </Routes>
       </main>
 
       <footer className="site-footer">
-        <div className="container">© {new Date().getFullYear()} - Benjamin Fontaine</div>
+        <div className="container">
+          <div className="footer-content">
+            <p className="footer-copyright">
+              © {new Date().getFullYear()} - Benjamin Fontaine - Développeur Web Freelance
+            </p>
+            <nav className="footer-legal">
+              <Link to="/mentions-legales">Mentions légales</Link>
+              <Link to="/confidentialite">Confidentialité</Link>
+              <Link to="/cgv">CGV</Link>
+            </nav>
+          </div>
+        </div>
       </footer>
     </>
   );
