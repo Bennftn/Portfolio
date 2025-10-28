@@ -102,8 +102,8 @@ export default function CGV() {
                 <strong>Tarifs indicatifs :</strong>
               </p>
               <ul>
-                <li>Site vitrine : À partir de 800€</li>
-                <li>Site e-commerce : À partir de 2 500€</li>
+                <li>Site vitrine : À partir de 1 200€</li>
+                <li>Site e-commerce : À partir de 3 000€</li>
                 <li>Maintenance mensuelle : Dès 80€/mois</li>
                 <li>Refonte de site : Sur devis</li>
               </ul>
@@ -256,7 +256,7 @@ export default function CGV() {
 
             <section className="legal-section">
               <h2>Article 12 - Annulation et résiliation</h2>
-              
+
               <h3>12.1. Annulation par le client</h3>
               <p>
                 En cas d'annulation du projet par le client après signature du devis :

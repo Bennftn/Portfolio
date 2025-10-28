@@ -13,7 +13,7 @@ const Services = () => {
         "Responsive mobile",
         "Formulaire de contact"
       ],
-      price: "À partir de 800€",
+      price: "À partir de 1 200€",
       cta: "Demander un devis"
     },
     {
@@ -26,7 +26,7 @@ const Services = () => {
         "Espace client",
         "Tableau de bord"
       ],
-      price: "À partir de 2 500€",
+      price: "À partir de 3 000€",
       cta: "En savoir plus"
     },
     {
