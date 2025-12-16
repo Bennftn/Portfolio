@@ -1,33 +1,41 @@
-import React from 'react';
-import '../App.css';
+import React from "react";
+import "../App.css";
 
 const Services = () => {
   const services = [
     {
       icon: "🌐",
       title: "Site Vitrine",
-      description: "Présentation professionnelle de votre activité avec un design moderne et responsive",
+      description:
+        "Présentation professionnelle de votre activité avec un design moderne et responsive",
       features: [
         "Design sur mesure",
-        "SEO Optimisé ",
+        "SEO Optimisé",
         "Responsive mobile",
-        "Formulaire de contact"
+        "Formulaire de contact",
+        "Hébergement inclus 1 an",
       ],
-      price: "À partir de 1 200€",
-      cta: "Demander un devis"
+      price: "1 200€",
+      priceDetail: "À partir de",
+      cta: "Demander un devis",
+      popular: false,
     },
     {
       icon: "🛒",
       title: "Site E-commerce",
-      description: "Boutique en ligne complète pour vendre vos produits ou services",
+      description:
+        "Boutique en ligne complète pour vendre vos produits ou services",
       features: [
-        "Paiement sécurisé",
+        "Paiement sécurisé (Stripe/PayPal)",
         "Gestion des stocks",
-        "Espace client",
-        "Tableau de bord"
+        "Espace client personnalisé",
+        "Tableau de bord admin",
+        "Formation à l'utilisation",
       ],
-      price: "À partir de 3 000€",
-      cta: "En savoir plus"
+      price: "3 000€",
+      priceDetail: "À partir de",
+      cta: "En savoir plus",
+      popular: true, // ← Mettre en avant
     },
     {
       icon: "🔧",
@@ -36,12 +44,16 @@ const Services = () => {
       features: [
         "Mises à jour régulières",
         "Sauvegarde automatique",
-        "Support technique",
-        "Évolutions sur demande"
+        "Support prioritaire 24/48h",
+        "Évolutions sur demande",
+        "Monitoring performances",
       ],
-      price: "Dès 80€/mois",
-      cta: "Découvrir l'offre"
-    }
+      price: "80€",
+      priceDetail: "Dès",
+      priceSuffix: "/mois",
+      cta: "Découvrir l'offre",
+      popular: false,
+    },
   ];
 
   return (
@@ -56,27 +68,75 @@ const Services = () => {
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <article key={index} className="card service-card">
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
+            <article
+              key={index}
+              className={`service-card ${service.popular ? "service-popular" : ""}`}
+              style={{ "--delay": `${index * 100}ms` }}
+            >
+              {/* Badge Popular */}
+              {service.popular && (
+                <div className="service-badge">
+                  <span>⭐ Populaire</span>
+                </div>
+              )}
+
+              {/* Icon */}
+              <div className="service-icon-wrapper">
+                <span className="service-icon">{service.icon}</span>
+              </div>
+
+              {/* Title */}
+              <h3 className="service-title">{service.title}</h3>
+
+              {/* Description */}
               <p className="service-description">{service.description}</p>
+
+              {/* Price */}
+              <div className="service-price-box">
+                <span className="price-detail">{service.priceDetail}</span>
+                <span className="price-amount">{service.price}</span>
+                {service.priceSuffix && (
+                  <span className="price-suffix">{service.priceSuffix}</span>
+                )}
+              </div>
+
+              {/* Features */}
               <ul className="service-features">
                 {service.features.map((feature, idx) => (
                   <li key={idx}>
-                    <span className="check-mark">✓</span>
-                    {feature}
+                    <svg
+                      className="check-icon"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                    >
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <div className="service-footer">
-                <span className="service-price">{service.price}</span>
-                <button
-                  className="btn btn-sm"
-                  onClick={() => window.location.href='/contact'}
+
+              {/* CTA Button */}
+              <button
+                className={`btn service-cta ${service.popular ? "btn-featured" : ""}`}
+                onClick={() => (window.location.href = "/contact")}
+              >
+                {service.cta}
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
                 >
-                  {service.cta}
-                </button>
-              </div>
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
             </article>
           ))}
         </div>
