@@ -55,7 +55,7 @@ export const projects = [
       "Animations fluides",
       "100% responsive",
     ],
-    liveUrl: "https://site-e-commerce-fictif.vercel.app/",
+    demo: "https://site-e-commerce-fictif.vercel.app/",
   },
   {
     title: "FlowTask - SaaS Landing Page",
@@ -110,7 +110,7 @@ export const projects = [
       "Navbar sticky adaptive",
       "100% responsive",
     ],
-    liveUrl: "https://saas-landing-fictif.vercel.app/",
+    demo: "https://saas-landing-fictif.vercel.app/",
   },
   {
     title: "Le Clos des Saveurs - Restaurant Gastronomique",
@@ -178,7 +178,7 @@ export const projects = [
       "Footer avec horaires et contact",
       "100% responsive",
     ],
-    liveUrl: "https://landing-page-restaurant-vins.vercel.app/",
+    demo: "https://landing-page-restaurant-vins.vercel.app/",
   },
   {
     title: "ComptaPro - Cabinet d'Expertise Comptable",
@@ -235,7 +235,7 @@ export const projects = [
       "Footer complet avec coordonnées",
       "Design professionnel bleu/blanc",
     ],
-    liveUrl: "https://landing-page-comptable.vercel.app",
+    demo: "https://landing-page-comptable.vercel.app",
   },
   {
     title: "Alexandre Moreau - Coach Sportif",
