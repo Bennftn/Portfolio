@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 
 const Services = () => {
   const services = [
@@ -35,7 +34,7 @@ const Services = () => {
       price: "3 000€",
       priceDetail: "À partir de",
       cta: "En savoir plus",
-      popular: true, // ← Mettre en avant
+      popular: true,
     },
     {
       icon: "🔧",
@@ -57,55 +56,83 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="section services">
-      <div className="container">
-        <div className="services-header">
-          <h2>Mes Services</h2>
-          <p className="services-subtitle">
+    <section id="services" className="py-20 scroll-mt-[90px]">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h2 className="text-[clamp(2rem,4vw,2.75rem)] font-bold font-display mb-3">
+            Mes Services
+          </h2>
+          <p className="text-[var(--muted)] text-lg max-w-xl mx-auto leading-relaxed">
             Des solutions web adaptées à vos besoins et votre budget
           </p>
         </div>
 
-        <div className="services-grid">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(20px,3vw,28px)]">
           {services.map((service, index) => (
             <article
               key={index}
-              className={`service-card ${service.popular ? "service-popular" : ""}`}
-              style={{ "--delay": `${index * 100}ms` }}
+              className={`
+                group relative flex flex-col p-8 lg:p-7
+                bg-[var(--surface)] border rounded-2xl
+                transition-all duration-300 ease-out
+                hover:-translate-y-2 hover:shadow-[0_20px_40px_var(--glow)]
+                animate-fadeInUp motion-reduce:animate-none
+                ${
+                  service.popular
+                    ? "border-2 border-[var(--accent)] bg-gradient-to-br from-[color-mix(in_oklab,var(--accent)_5%,var(--surface))] to-[var(--surface)] hover:border-[var(--accent)] hover:shadow-[0_20px_50px_color-mix(in_oklab,var(--accent)_35%,transparent)]"
+                    : "border-[var(--border)] hover:border-[color-mix(in_oklab,var(--accent)_40%,var(--border))]"
+                }
+              `}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Badge Popular */}
               {service.popular && (
-                <div className="service-badge">
+                <div className="absolute -top-3 right-5 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] text-[var(--btn-fg)] px-4 py-1.5 rounded-full text-sm font-bold shadow-[0_4px_12px_color-mix(in_oklab,var(--accent)_40%,transparent)]">
                   <span>⭐ Populaire</span>
                 </div>
               )}
 
-              {/* Icon */}
-              <div className="service-icon-wrapper">
-                <span className="service-icon">{service.icon}</span>
+              {/* Icon Wrapper */}
+              <div className="w-[70px] h-[70px] flex items-center justify-center bg-gradient-to-br from-[color-mix(in_oklab,var(--accent)_15%,transparent)] to-[color-mix(in_oklab,var(--accent-2)_15%,transparent)] border border-[color-mix(in_oklab,var(--accent)_30%,var(--border))] rounded-2xl mb-6 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-[5deg] group-hover:border-[var(--accent)]">
+                <span className="text-4xl">{service.icon}</span>
               </div>
 
               {/* Title */}
-              <h3 className="service-title">{service.title}</h3>
+              <h3 className="text-2xl font-bold mb-4 leading-tight">
+                {service.title}
+              </h3>
 
               {/* Description */}
-              <p className="service-description">{service.description}</p>
+              <p className="text-[var(--muted)] leading-relaxed mb-6 text-[0.95rem]">
+                {service.description}
+              </p>
 
-              {/* Price */}
-              <div className="service-price-box">
-                <span className="price-detail">{service.priceDetail}</span>
-                <span className="price-amount">{service.price}</span>
+              {/* Price Box */}
+              <div className="flex items-baseline gap-1.5 mb-6 p-4 bg-[color-mix(in_oklab,var(--accent)_8%,transparent)] border border-[color-mix(in_oklab,var(--accent)_20%,var(--border))] rounded-xl">
+                <span className="text-sm text-[var(--muted)] font-medium">
+                  {service.priceDetail}
+                </span>
+                <span className="text-3xl font-extrabold text-[var(--accent)] tracking-tight">
+                  {service.price}
+                </span>
                 {service.priceSuffix && (
-                  <span className="price-suffix">{service.priceSuffix}</span>
+                  <span className="text-base text-[var(--muted)] font-medium">
+                    {service.priceSuffix}
+                  </span>
                 )}
               </div>
 
               {/* Features */}
-              <ul className="service-features">
+              <ul className="list-none p-0 m-0 mb-7 flex-1 space-y-2.5">
                 {service.features.map((feature, idx) => (
-                  <li key={idx}>
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2.5 text-[0.95rem] leading-normal"
+                  >
                     <svg
-                      className="check-icon"
+                      className="flex-shrink-0 text-[var(--accent)] mt-0.5"
                       width="18"
                       height="18"
                       viewBox="0 0 24 24"
@@ -122,11 +149,22 @@ const Services = () => {
 
               {/* CTA Button */}
               <button
-                className={`btn service-cta ${service.popular ? "btn-featured" : ""}`}
+                className={`
+                  w-full mt-auto flex items-center justify-center gap-2 py-3.5 px-5
+                  font-semibold rounded-xl cursor-pointer
+                  transition-all duration-300
+                  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40
+                  ${
+                    service.popular
+                      ? "bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] border-[var(--accent)] text-[var(--btn-fg)] shadow-[0_4px_12px_color-mix(in_oklab,var(--accent)_30%,transparent)] hover:shadow-[0_6px_20px_color-mix(in_oklab,var(--accent)_40%,transparent)] hover:-translate-y-0.5"
+                      : "bg-[var(--accent)] text-[var(--btn-fg)] border border-[color-mix(in_oklab,var(--accent-2)_30%,var(--accent)_70%)] hover:bg-[var(--accent-2)] hover:text-white hover:-translate-y-0.5"
+                  }
+                `}
                 onClick={() => (window.location.href = "/contact")}
               >
                 {service.cta}
                 <svg
+                  className="transition-transform duration-300 group-hover:translate-x-1"
                   width="16"
                   height="16"
                   viewBox="0 0 24 24"

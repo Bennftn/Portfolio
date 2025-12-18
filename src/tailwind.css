@@ -1,0 +1,513 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========
+   Variables CSS - Dark/Light mode
+   ========= */
+:root {
+  --font-sans: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-display: "Space Grotesk", var(--font-sans);
+
+  --cafe-noir: #4C3D19;
+  --kombu: #354024;
+  --moss: #889063;
+  --tan: #CFB899;
+  --bone: #E5D7C4;
+
+  --bg: #0f1110;
+  --surface: #161a17;
+  --text: #EEEADF;
+  --muted: #B9AF9B;
+  --accent: #889063;
+  --accent-2: #354024;
+  --border: #232621;
+  --glow: rgba(136, 144, 99, 0.22);
+  --btn-fg: #111;
+
+  --header-bg: rgba(22, 26, 23, 0.9);
+  --header-text: #fff;
+  --header-border: var(--border);
+}
+
+:root[data-theme="light"] {
+  --bg: #F7F7FB;
+  --surface: #FFFFFF;
+  --text: #1F2937;
+  --muted: #6B7280;
+  --accent: #6D28D9;
+  --accent-2: #5B21B6;
+  --border: #E5E7EB;
+  --glow: rgba(109, 40, 217, 0.16);
+  --btn-fg: #fff;
+
+  --header-bg: rgba(255, 255, 255, 0.88);
+  --header-text: #111827;
+  --header-border: #e5e7eb;
+}
+
+/* =========
+   Base layer - Reset & fondations
+   ========= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100dvh;
+  }
+
+  h1, h2, .display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent-2);
+  }
+
+  section {
+    scroll-margin-top: 90px;
+  }
+
+  /* Fix pour les thèmes */
+  :root[data-theme="light"] .bg-ornaments {
+    opacity: 0.12;
+  }
+
+  :root[data-theme="light"] .skill-track {
+    background: #edebfa;
+  }
+}
+
+/* =========
+   Animations custom
+   ========= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes blobMove1 {
+  0% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(10vmax,6vmax,0) scale(1.08); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+
+@keyframes blobMove2 {
+  0% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(-8vmax,-5vmax,0) scale(1.12); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* =========
+   Utilities layer - Marquee animation
+   ========= */
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+  
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* =========
+   Components layer - Composants réutilisables
+   ========= */
+@layer components {
+  /* Bouton principal */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2;
+    @apply min-h-[44px] px-4;
+    @apply font-semibold rounded-xl cursor-pointer;
+    @apply transition-all duration-200;
+    background: var(--accent);
+    color: var(--btn-fg);
+    border: 1px solid color-mix(in oklab, var(--accent-2) 30%, var(--accent) 70%);
+  }
+
+  .btn:hover {
+    background: var(--accent-2);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .btn:active {
+    transform: translateY(0) scale(0.99);
+  }
+
+  .btn:focus-visible {
+    @apply outline-none;
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 40%, transparent);
+  }
+
+  .btn:disabled,
+  .btn.is-disabled {
+    @apply opacity-55 cursor-not-allowed pointer-events-none;
+  }
+
+  /* Bouton outline */
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+  }
+
+  .btn-outline:hover {
+    background: var(--accent);
+    color: var(--btn-fg);
+  }
+
+  /* Bouton ghost */
+  .btn-ghost {
+    @apply bg-transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .btn-ghost:hover {
+    background: var(--surface);
+    color: var(--text);
+  }
+
+  /* Bouton featured (pour services populaires) */
+  .btn-featured {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+
+  .btn-featured:hover {
+    box-shadow: 0 6px 20px color-mix(in oklab, var(--accent) 40%, transparent);
+    transform: translateY(-2px);
+  }
+
+  /* Card de base */
+  .card {
+    @apply rounded-2xl p-4;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    @apply transition-all duration-200;
+  }
+
+  .card:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 18px 36px var(--glow);
+    border-color: color-mix(in oklab, var(--accent) 35%, var(--border));
+  }
+
+  /* Input / Textarea */
+  .input,
+  .textarea {
+    @apply w-full px-3 py-2.5 rounded-lg;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+
+  .input:focus,
+  .textarea:focus {
+    @apply outline-none ring-2 ring-offset-2;
+    --tw-ring-color: var(--accent);
+  }
+
+  /* Chip / Tag */
+  .chip {
+    @apply px-2.5 py-1 rounded-full text-sm;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+  }
+}
+
+/* =========
+   Utilities layer - Utilitaires custom
+   ========= */
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-[var(--accent)] via-[var(--accent-2)] to-[var(--moss)] bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out backwards;
+  }
+
+  .animate-pulse-custom {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  /* Font display */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+}
+
+/* =========
+   Scrollbar custom
+   ========= */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-2);
+}
+
+/* =========
+   Fond animé (blobs)
+   ========= */
+.bg-ornaments {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+}
+
+.bg-ornaments::before,
+.bg-ornaments::after {
+  content: "";
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(40px);
+  will-change: transform;
+}
+
+.bg-ornaments::before {
+  left: -12vmax;
+  top: -12vmax;
+  background: radial-gradient(circle at 30% 30%, var(--accent), transparent 60%);
+  animation: blobMove1 24s ease-in-out infinite;
+}
+
+.bg-ornaments::after {
+  right: -16vmax;
+  bottom: -16vmax;
+  background: radial-gradient(circle at 70% 70%, var(--accent-2), transparent 60%);
+  animation: blobMove2 32s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-ornaments,
+  .bg-ornaments::before,
+  .bg-ornaments::after {
+    animation: none !important;
+  }
+
+  .animate-fadeInUp {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========
+   Header sticky
+   ========= */
+.site-header {
+  @apply sticky top-0 z-10 py-3;
+  background: var(--header-bg);
+  color: var(--header-text);
+  border-bottom: 1px solid var(--header-border);
+  backdrop-filter: saturate(120%) blur(6px);
+}
+
+.site-header .logo {
+  color: var(--header-text);
+  @apply font-bold tracking-tight;
+}
+
+.site-header nav a {
+  color: var(--header-text);
+}
+
+.site-header nav a:hover {
+  @apply underline;
+}
+
+.site-header .btn-ghost.theme-toggle {
+  color: var(--header-text);
+  border-color: color-mix(in oklab, var(--header-text) 35%, transparent);
+  background: transparent;
+}
+
+.site-header .btn-ghost.theme-toggle:hover {
+  background: color-mix(in oklab, var(--header-text) 12%, transparent);
+}
+
+/* =========
+   Footer
+   ========= */
+.site-footer {
+  @apply mt-8 py-6;
+  border-top: 1px solid var(--border);
+  background: rgba(22, 26, 23, 0.6);
+}
+
+:root[data-theme="light"] .site-footer {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* =========
+   Skill bars
+   ========= */
+.skill-track {
+  @apply h-3 rounded-full overflow-hidden;
+  background: var(--tan);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.skill-fill {
+  @apply h-full rounded-[inherit];
+  background: var(--accent);
+  width: 0;
+  transition: width 900ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-fill {
+    transition: none;
+  }
+}
+
+/* =========
+   Timeline
+   ========= */
+.timeline {
+  @apply list-none relative mt-5;
+  padding-left: 64px;
+}
+
+.timeline::before {
+  content: "";
+  @apply absolute left-[22px] top-0 bottom-0 w-0.5;
+  background: var(--border);
+}
+
+.tl-item {
+  @apply relative my-4;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.tl-item.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.tl-marker {
+  @apply absolute w-4 h-4 rounded-full;
+  left: -28px;
+  top: 0.9rem;
+  background: var(--accent);
+  border: 2px solid color-mix(in oklab, var(--accent) 50%, transparent);
+  box-shadow: 0 0 0 6px color-mix(in oklab, var(--accent) 18%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl-item {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========
+   Reveal animation (pour les cards)
+   ========= */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: var(--d, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =========
+   Select custom
+   ========= */
+select.input {
+  @apply cursor-pointer appearance-none pr-9;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23889063' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+:root[data-theme="light"] select.input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236D28D9' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+}
+
+select.input option {
+  background: var(--surface);
+  color: var(--text);
+}
+
+select.input option:checked {
+  background: var(--accent);
+  color: var(--btn-fg);
+  @apply font-semibold;
+}
